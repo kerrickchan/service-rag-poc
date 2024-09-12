@@ -7,6 +7,7 @@ import { join } from 'path';
 
 import { AppController, AppResolver } from './app.controller';
 import { AppService } from './app.service';
+import { RagModule } from './rag/rag.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { AppService } from './app.service';
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
       sortSchema: true,
     }),
+    RagModule,
   ],
   controllers: [AppController],
   providers: [AppService, AppResolver],
